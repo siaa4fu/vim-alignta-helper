@@ -24,7 +24,7 @@ function! s:helper.buildTable() " {{{
         let i = 0
         while i < strlen(key)
           let char = key[i]
-          if char == "\<Esc>" || char == "\<C-c>"
+          if char ==# "\<Esc>" || char ==# "\<C-c>"
             " <Esc> と <C-c> は入力を中止するために予約済み
             throw 'The chars of "<Esc>" and "<C-c>" are not available in g:alignta_helper_keys.'
           endif
@@ -56,7 +56,7 @@ function! s:helper.run(callback, ...) " {{{
   let [optname, opt] = ['', '']
   let [_t, char] = [self.table, s:getchar()]
   while has_key(_t, char)
-    if char == "\<Esc>" || char == "\<C-c>"
+    if char ==# "\<Esc>" || char ==# "\<C-c>"
       " <Esc> と <C-c> は入力を中止するために予約済み
       break
     elseif type(_t[char]) == type('')
