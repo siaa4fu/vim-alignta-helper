@@ -1,11 +1,4 @@
-" File:        autoload/alignta_helper.vim
-" Author:      sima (TwitterID: sima_fu)
-" Namespace:   http://f-u.seesaa.net/
-
 scriptencoding utf-8
-
-let s:save_cpo = &cpo
-set cpo&vim
 
 function! s:unescape(key) " {{{
   let key = split(a:key, '\(<[^<>]\+>\|.\)\zs')
@@ -91,6 +84,3 @@ function! alignta_helper#map(mode) " {{{
     echoerr 'alignta_helper:' v:exception
   endtry
 endfunction " }}}
-
-let &cpo = s:save_cpo
-unlet s:save_cpo
